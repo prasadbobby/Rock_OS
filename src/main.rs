@@ -13,10 +13,10 @@ fn panic(_info: &PanicInfo) -> ! {
 static HELLO: &[u8] = b"Welcome to Rock OS!";
 
 #[no_mangle] 
+// this function is the entry point, since the linker looks for a function named `_start` by default
 pub extern "C" fn _start() -> ! {
-    // this function is the entry point, since the linker looks for a function named `_start` by default
 
-    let vga_buffer = 0xb8000 as *mut u8;
+	let vga_buffer = 0xb8000 as *mut u8;
 
     for (i, &byte) in HELLO.iter().enumerate(){
     	unsafe{
