@@ -1,4 +1,4 @@
-#Rock OS
+# Rock OS
 
 OS made using Rust
 
@@ -18,7 +18,10 @@ Install nightly version: <br>
 
 For running you should have [QEMU](https://www.qemu.org/). <br>
 After installing, run: <br>
-`qemu-system-x86_64 -drive format=raw,file=target/x86_64-rock_os/debug/bootimage-rock_os.bin`
+`qemu-system-x86_64 -drive format=raw,file=target/x86_64-rock_os/debug/bootimage-rock_os.bin`<br>
+or
+<br>
+`cargo run`
 
 *OR* 
 
