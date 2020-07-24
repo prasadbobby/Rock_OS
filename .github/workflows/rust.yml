@@ -21,7 +21,7 @@ jobs:
       with:
         toolchain: nightly
         override: true
-        components: rustfmt, clippy    
+        components: rustfmt, clippy, core, compiler_builtins
 
     - name: Run cargo check
       uses: actions-rs/cargo@v1
