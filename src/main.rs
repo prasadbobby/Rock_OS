@@ -1,29 +1,44 @@
 #![no_std]
 #![no_main]
+#![feature(custom_test_frameworks)]
+#![test_runner(crate::test_runner)]
+#![reexport_test_harness_main = "test_main"]
 
 extern crate rlibc;
+
 use core::panic::PanicInfo;
 
-/// This function is called on panic.
-#[panic_handler]
-fn panic(_info: &PanicInfo) -> ! {
+mod vga_buffer;
+
+#[no_mangle]
+pub extern "C" fn _start() -> ! {
+    println!("Welcome to Rock OS{}", "!");
+    // panic!("Some panic message");
+
+    #[cfg(test)]
+    test_main();
+
     loop {}
 }
 
-static HELLO: &[u8] = b"Welcome to Rock OS!";
-
-#[no_mangle] 
-// this function is the entry point, since the linker looks for a function named `_start` by default
-pub extern "C" fn _start() -> ! {
-
-	let vga_buffer = 0xb8000 as *mut u8;
-
-    for (i, &byte) in HELLO.iter().enumerate(){
-    	unsafe{
-    		*vga_buffer.offset(i as isize * 2) = byte;
-            *vga_buffer.offset(i as isize * 2 + 1) = 0xb;
-    	}
-    }
-
+/// This function is called on panic.
+#[panic_handler]
+fn panic(info: &PanicInfo) -> ! {
+    println!("{}", info);
     loop {}
+}
+
+#[cfg(test)]
+fn test_runner(tests: &[&dyn Fn()]) {
+    println!("Running {} tests", tests.len());
+    for test in tests {
+        test();
+    }
+}
+
+#[test_case]
+fn trivial_assertion() {
+    print!("trivial assertion... ");
+    assert_eq!(1, 1);
+    println!("[ok]");
 }
