@@ -21,9 +21,7 @@ Install nightly version: <br>
 For running you should have [QEMU](https://www.qemu.org/). <br>
 After installing, run: <br>
 `cargo run`<br>
-That would open the OS in the QEMU virtual machine.
-
-				*OR* 
+That would install the dependencies/crates and open the OS in the QEMU virtual machine.
 
 ### Running in the Real Machine 
 
@@ -34,7 +32,7 @@ You can boot it in a USB and run in a real machine.
 Run:
 `dd if=target/x86_64-blog_os/debug/bootimage-rock_os.bin of=/dev/sdX && sync` <br>
 
-Here in `sdX` X is the number of the usb port you get by running: <br>
+Here in `sdX` X is the number of the usb device you get by running: <br>
 `diskutil list` 
 
 ## Have a suggestion?
