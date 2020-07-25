@@ -1,6 +1,8 @@
 # Rock OS
 
-OS made using Rust
+OS made using Rust<br>
+
+![Build](https://github.com/HarshitRuwali/Rock_OS/workflows/Build/badge.svg?branch=master)
 
 ## Setting up the Work Environment
 
