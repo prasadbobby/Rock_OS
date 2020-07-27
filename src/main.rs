@@ -12,10 +12,16 @@ pub extern "C" fn _start() -> ! {
     println!("Welcome to Rock OS{}", "!");
     // panic!("Some panic message");
 
+    rock_os::init();
+
     #[cfg(test)]
     test_main();
+    println!("Enter the Password {}", "");
+    println!("User Name:{}", "admin");
+    println!("Password: {}", "");
 
-    loop {}
+    rock_os::hlt_loop();
+
 }
 
 /// This function is called on panic.
@@ -23,7 +29,8 @@ pub extern "C" fn _start() -> ! {
 #[panic_handler]
 fn panic(info: &PanicInfo) -> ! {
     println!("{}", info);
-    loop {}
+    rock_os::hlt_loop();
+
 }
 
 #[cfg(test)]
