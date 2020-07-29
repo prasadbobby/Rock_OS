@@ -2,7 +2,8 @@
 
 OS made using Rust<br>
 
-![Build](https://github.com/HarshitRuwali/Rock_OS/workflows/Build/badge.svg?branch=master)
+<!-- ![Build](https://github.com/HarshitRuwali/Rock_OS/workflows/Build/badge.svg?branch=master) -->
+<!-- Removing the Build badge due the bug in the nightly version of rust. -->
 
 ## Setting up the Work Environment
 
@@ -43,5 +44,8 @@ Create an issue and mention it.
 ## Want to contribute?
 Fork the repo, make the changes and push a pull request. 
 
+## Ref
+Awesome guide by @phil-opp [Writing an OS in Rust](https://os.phil-opp.com/).
+
 ## Contact Me
-You may message me on @harshitruwali on Telegram or shoot out a [mail](https://mail.google.com/mail/?view=cm&fs=1&to=ruwaliharshit@gmail.com).
+You may message me on [Telegram](https://t.me/harshitruwali) or shoot out a [mail](https://mail.google.com/mail/?view=cm&fs=1&to=ruwaliharshit@gmail.com).
