@@ -45,7 +45,7 @@ Create an issue and mention it.
 Fork the repo, make the changes and push a pull request. 
 
 ## Ref
-Awesome guide by @phil-opp [Writing an OS in Rust](https://os.phil-opp.com/).
+Awesome guide by @phil-opp: [Writing an OS in Rust](https://os.phil-opp.com/).
 
 ## Contact Me
 You may message me on [Telegram](https://t.me/harshitruwali) or shoot out a [mail](https://mail.google.com/mail/?view=cm&fs=1&to=ruwaliharshit@gmail.com).

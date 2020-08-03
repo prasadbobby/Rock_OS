@@ -10,6 +10,10 @@ edition = "2018"
 name = "panic"
 harness = false
 
+[[test]]
+name = "stack_overflow"
+harness = false
+
 [dependencies]
 bootloader = "0.9.8"
 rlibc = "1.0.0"
